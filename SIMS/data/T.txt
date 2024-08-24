@@ -1,0 +1,44 @@
+//std::string account = "SeaYJ";
+//std::string password = "seayjnb666";
+
+//// 设置AES密钥和IV（这里需要自定义）
+//byte key[CryptoPP::AES::DEFAULT_KEYLENGTH] = { 0 };
+//byte iv[CryptoPP::AES::BLOCKSIZE] = { 0 };
+
+//try {
+//    // 初始化加密器
+//    CryptoPP::GCM<CryptoPP::AES>::Encryption encryption;
+//    encryption.SetKeyWithIV(key, sizeof(key), iv, sizeof(iv));
+
+//    // 加密账号
+//    std::string encrypted_username;
+//    CryptoPP::StringSource(account, true,
+//        new CryptoPP::AuthenticatedEncryptionFilter(encryption,
+//            new CryptoPP::StringSink(encrypted_username),
+//            false // 不要追加校验码
+//        )
+//    );
+
+//    // 重置加密器，用于密码加密
+//    encryption.SetKeyWithIV(key, sizeof(key), iv, sizeof(iv));
+
+//    // 加密密码
+//    std::string encrypted_password;
+//    CryptoPP::StringSource(password, true,
+//        new CryptoPP::AuthenticatedEncryptionFilter(encryption,
+//            new CryptoPP::StringSink(encrypted_password),
+//            false // 不要追加校验码
+//        )
+//    );
+
+//    // 将加密后的账号和密码输出到文件
+//    std::ofstream file("data/account_database");
+//    file << encrypted_username << std::endl;
+//    file << encrypted_password << std::endl;
+//    file.close();
+
+//    std::cout << "Encrypted account and password saved to file." << std::endl;
+//}
+//catch (const CryptoPP::Exception& e) {
+//    std::cerr << "Encryption error: " << e.what() << std::endl;
+//}
